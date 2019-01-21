@@ -1,0 +1,96 @@
+page-price-table-modal {
+    ion-content.content{
+        background: rgba($color: #000000, $alpha: .4);
+    }
+    .scroll-content{
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        padding: 0px !important;
+        flex-direction: column;
+    }
+    .close-btn{
+        background: map-get($map: $colors, $key: primary);
+        width: 100%;
+        padding: 5px;
+        border-radius: 5px 5px 0 0;
+        .button{
+            height: 40px;
+            width: 40px;
+            background: transparent;
+            color: white;
+            border-radius: 50%;
+            box-shadow: none;
+        }
+    }
+    .primary-bg{
+        padding: 0 16px 16px 16px;
+        border-radius: 0 0 5px 5px;
+        max-width: 720px;
+        margin: auto;
+        background: map-get($map: $colors, $key: primary);
+        
+        .title-font{
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 1.6rem;
+        }
+    }
+
+    .col{
+        text-align: center;
+    }
+    .border-outline{
+        border: 1px solid #222;
+    }
+    .yellow-bg{
+        background: map-get($map: $colors, $key: yellow);
+        font-size: 1.6rem;
+        padding:  0;
+        border-bottom: 1px solid #222;
+        .col{
+            border-left: 1px solid #222;
+            padding: 14px 0;
+        }
+        .col:first-child{
+            border-left: 0;
+        }
+    }
+    .white-smoke-bg{
+        background: whitesmoke;
+        .border{
+            padding: 10px 0;
+            border-bottom: 1px solid #222;
+        }
+        .border:last-child{
+            border-bottom: 0;
+        }
+        .col{
+            border-left: 1px solid #222;
+            padding: 10px 0;
+        }
+        .col:first-child{
+            border-left: 0;
+        }
+    }
+
+    .bottom-container{
+        margin-top: 20px;
+    }
+    .white-color{
+        color: white;
+        margin: 10px 0;
+        ion-icon{
+            color: map-get($map: $colors, $key: yellow);
+        }
+        span{
+            margin-left: 6px;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .scroll-content{
+            padding: 10px !important;
+        }
+    }
+}

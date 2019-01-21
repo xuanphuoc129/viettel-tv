@@ -1,0 +1,104 @@
+<!--
+  Generated template for the ChannelListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button [class.selected]="_type == 1" (click)="onClickType(1)">
+        Truyền hình cơ bản
+      </button>
+    </ion-buttons>
+    <ion-buttons left>
+      <button ion-button [class.selected]="_type == 2" (click)="onClickType(2)">
+       Truyền hình K+
+      </button>
+    </ion-buttons>
+
+    <ion-buttons right>
+      <button ion-button icon-only navPop>
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <div [hidden]="_type == 2">
+    <div class="list-name">
+      DANH SÁCH KÊNH Truyền hình cơ bản
+    </div>
+
+    <table width="100%">
+      <tr class="tb-header">
+        <th>TT</th>
+        <th class="xs-hidden">TT STB</th>
+        <th class="xs-hidden">Xuất xứ</th>
+        <th class="xs-hidden">Thể loại</th>
+        <th class="xs-hidden">Đơn vị cung cấp</th>
+        <th>Kênh mới</th>
+        <th>Tín hiệu</th>
+        <th class="xs-hidden">TSTV (Tua lại) (giờ)</th>
+        <th class="xs-hidden">TVOD (Xem lại) (ngày)</th>
+        <th class="xs-hidden">NPVR (Ghi lại)</th>
+        <!-- <th class="xs-hidden">Ghi chú</th> -->
+      </tr>
+
+      <tr *ngFor="let item of mChannelLists1" class="tb-row">
+        <td>{{item.tt}}</td>
+        <td class="xs-hidden">{{item.tt_stb}}</td>
+        <td class="xs-hidden">{{item.source}}</td>
+        <td class="xs-hidden">{{item.type}}</td>
+        <td class="xs-hidden">{{item.agency}}</td>
+        <td >{{item.new_channel}}</td>
+        <td>{{item.signal}}</td>
+        <td class="xs-hidden">{{item.tstv}}</td>
+        <td class="xs-hidden">{{item.tvod}}</td>
+        <td class="xs-hidden">{{item.npvr}}</td>
+        <!-- <td class="xs-hidden">{{item.note}}</td> -->
+      </tr>
+    </table>
+  </div>
+
+  <div [hidden]="_type == 1">
+    <div class="list-name">
+      DANH SÁCH KÊNH K+
+    </div>
+    <table width="100%">
+      <tr class="tb-header">
+        <th>TT</th>
+        <th class="xs-hidden">TT STB</th>
+        <th class="xs-hidden">Xuất xứ</th>
+        <th class="xs-hidden">Thể loại</th>
+        <th class="xs-hidden">Đơn vị cung cấp</th>
+        <th>Kênh mới</th>
+        <th>Tín hiệu</th>
+        <th class="xs-hidden">TSTV (Tua lại) (giờ)</th>
+        <th class="xs-hidden">TVOD (Xem lại) (ngày)</th>
+        <th class="xs-hidden">NPVR (Ghi lại)</th>
+      </tr>
+
+      <tr *ngFor="let item of mChannelLists2" class="tb-row">
+        <td>{{item.tt}}</td>
+        <td class="xs-hidden">{{item.tt_stb}}</td>
+        <td class="xs-hidden">{{item.source}}</td>
+        <td class="xs-hidden">{{item.type}}</td>
+        <td class="xs-hidden">{{item.agency}}</td>
+        <td>{{item.new_channel}}</td>
+        <td>{{item.signal}}</td>
+        <td class="xs-hidden">{{item.tstv}}</td>
+        <td class="xs-hidden">{{item.tvod}}</td>
+        <td class="xs-hidden">{{item.npvr}}</td>
+      </tr>
+    </table>
+  </div>
+
+
+</ion-content>

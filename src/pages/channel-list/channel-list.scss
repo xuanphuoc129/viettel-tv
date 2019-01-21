@@ -1,0 +1,46 @@
+page-channel-list {
+    .tb-header{
+        border-bottom: 1px solid #222;
+    }
+    th{
+        text-align: center;
+        background: map-get($map: $colors, $key: yellow);
+        padding: 10px;
+        border-right: 1px solid #222;
+    }
+    th:last-child{
+        border-right: 0;
+    }
+    .tb-row{
+        background: whitesmoke;
+        border-bottom: 1px solid #222;
+        td{
+        border-right: 1px solid #222;
+            padding: 8px;
+        }
+        td:last-child{
+            border-right: 0;
+        }
+    }
+    table{
+        border: 1px solid #222;
+    }
+    .list-name{
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+    .selected{
+        border-bottom: 1px solid white;
+        opacity: 1 !important;
+    }
+    .toolbar-background{
+        background: map-get($map: $colors, $key: secondary);
+    }
+    .bar-button{
+        color: white !important;
+        opacity: 0.6; 
+        border-radius: 0;
+    }
+}

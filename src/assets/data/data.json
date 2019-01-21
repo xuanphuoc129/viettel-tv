@@ -1,0 +1,206 @@
+{
+  "hotline1": "0962018555",
+  "hotline2": "0971519555",
+  "hotline3": "0865124000",
+  "config_server_email": {
+    "email_receive": "kunlyblack@gmail.com",
+    "email_sender": "cuahangviettel.vn@gmail.com",
+    "smtp_server": "smtp.gmail.com",
+    "username": "cuahangviettel.vn@gmail.com",
+    "password": "eknpglqnwzyydbur"
+  },
+  "phone_number": "098.776.2233",
+  "goi_cuoc": [{
+      "id": 1,
+      "name": "NET 1"
+    },
+    {
+      "id": 2,
+      "name": "NET 2"
+    },
+    {
+      "id": 3,
+      "name": "NET 3"
+    },
+    {
+      "id": 4,
+      "name": "NET 4"
+    },
+    {
+      "id": 5,
+      "name": "NET 5"
+    },
+    {
+      "id": 6,
+      "name": "NET 6"
+    }
+  ],
+  "dich_vu": [{
+      "id": 1,
+      "name": "Internet cáp quang",
+      "mobile_show": "Intenet"
+    },
+    {
+      "id": 2,
+      "name": "Combo Flexi",
+      "des": "Internet + Truyền hình",
+      "mobile_show": "Combo cơ bản"
+    },
+    {
+      "id": 3,
+      "name": "Combo Sport",
+      "des": "Internet + Truyền hình + Combo K+",
+      "mobile_show": "Combo K+"
+    }
+  ],
+  "danh_sach_bang_gia": [{
+      "name": "NET 1 (15Mbps)",
+      "internet": "185.000đ",
+      "combo_flexi": "225.000đ",
+      "combo_sport": "295.000đ"
+    },
+    {
+      "name": "NET 2 (20Mbps)",
+      "internet": "200.000đ",
+      "combo_flexi": "240.000đ",
+      "combo_sport": "310.000đ"
+    },
+    {
+      "name": "NET 3 (25Mbps)",
+      "internet": "220.000đ",
+      "combo_flexi": "260.000đ",
+      "combo_sport": "330.000đ"
+    },
+    {
+      "name": "NET 4 (30Mbps)",
+      "internet": "240.000đ",
+      "combo_flexi": "280.000đ",
+      "combo_sport": "350.000đ"
+    },
+    {
+      "name": "NET 5 (35Mbps)",
+      "internet": "270.000đ",
+      "combo_flexi": "310.000đ",
+      "combo_sport": "380.000đ"
+    },
+    {
+      "name": "NET 6 (40Mbps)",
+      "internet": "350.000đ",
+      "combo_flexi": "410.000đ",
+      "combo_sport": "460.000đ"
+    }
+  ],
+  "khuyen_mai_lap_mang": [{
+      "service": "THS 2 chiều công nghệ IP",
+      "package": "Flexi",
+      "price": "110",
+      "price_sell": "HNI"
+    },
+    {
+      "service": "",
+      "package": "Sport",
+      "price": "190",
+      "price_sell": "HNI HCM: 110.000"
+    },
+    {
+      "service": "service",
+      "package": "package",
+      "price": "price",
+      "price_sell": "price_sell"
+    },
+    {
+      "service": "THS 2 chiều",
+      "package": "FlexiTV2",
+      "price": "55",
+      "price_sell": "33.000 (giá khuyến mại)"
+    },
+    {
+      "service": "",
+      "package": "SportTV2",
+      "price": "190",
+      "price_sell": "áp dụng giá niêm yết"
+    }
+  ],
+  "uu_dai": [{
+      "type_connect": "Trả Sau Hàng Tháng",
+      "discount": "250K Phí Hòa Mạng",
+      "level": "Mức 1"
+    },
+    {
+      "type_connect": "Trả Trước 3 Tháng",
+      "discount": "Miễn Phí Hòa Mạng",
+      "level": "Mức 1"
+    },
+    {
+      "type_connect": "Trả Trước 6 Tháng",
+      "discount": "Tặng 1 Tháng",
+      "level": "Mức 1"
+    },
+    {
+      "type_connect": "Trả Trước 12 Tháng",
+      "discount": "Tặng 3 Tháng",
+      "level": "Mức 1"
+    },
+    {
+      "type_connect": "Trả Trước 18 Tháng",
+      "discount": "Tặng 5 Tháng",
+      "level": "Mức 1"
+    },
+    {
+      "type_connect": "Trả Sau Hàng Tháng",
+      "discount": "Miễn Phí Hòa Mạng",
+      "level": "Mức 2"
+    },
+    {
+      "type_connect": "Trả Trước 3 Tháng",
+      "discount": "Tặng 1 Tháng",
+      "level": "Mức 2"
+    },
+    {
+      "type_connect": "Trả Trước 3 Tháng",
+      "discount": "Tặng 2 Tháng",
+      "level": "Mức 2"
+    },
+    {
+      "type_connect": "Trả Trước 3 Tháng",
+      "discount": "Tặng 4 Tháng",
+      "level": "Mức 2"
+    },
+    {
+      "type_connect": "Trả Trước 3 Tháng",
+      "discount": "Tặng 6 Tháng",
+      "level": "Mức 2"
+    }
+  ],
+  "bang_gia_khuyen_mai": [
+    {
+      "service": "THS 2 chiều",
+      "package": "Flexi",
+      "price": "110,000đ",
+      "price_sell": "HNI, HCM: 40,000đ",
+      "type": 1
+    },
+    {
+      "service": "THS 2 chiều",
+      "package": "Sport",
+      "price": "190,000đ",
+      "price_sell": "HNI HCM: 110,000đ",
+      "type": 1
+    },
+    {
+      "service": "THS 2 chiều",
+      "package": "FlexiTV2",
+      "price": "55,000đ",
+      "price_sell": "33,000đ (giá khuyến mại)",
+      "type": 2
+    },
+    {
+      "service": "THS 2 chiều",
+      "package": "SportTV2",
+      "price": "190,000đ",
+      "price_sell": "190,000đ",
+      "type": 2
+    }
+  ]
+
+}

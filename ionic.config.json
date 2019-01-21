@@ -1,0 +1,7 @@
+{
+  "name": "viettel-tv",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

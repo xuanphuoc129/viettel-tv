@@ -1,0 +1,728 @@
+page-home {
+  .scroll-content{
+    overflow-x: hidden !important;
+    overflow-y: auto;
+  }
+  .container-header {
+    background: map-get($map: $colors, $key: secondary);
+
+    .container {
+      .col {
+        padding: 0;
+      }
+
+      .btn-order-container {
+        .button {
+          background: map-get($map: $colors, $key: yellow);
+          color: map-get($map: $colors, $key: primary);
+          box-shadow: none;
+          border-radius: 5px;
+        }
+      }
+
+      .line {
+        height: 50px;
+        background: map-get($map: $colors, $key: yellow);
+        width: 1px;
+        margin: 0 30px;
+      }
+
+      .btn-facebook-container {
+        text-decoration: unset;
+      }
+    }
+  }
+
+  .container {
+    margin: 0 auto;
+  } 
+
+  .banner-header {
+    background-image: url("../assets/viettel_tv/banner.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: calc(100vh - 120px);
+    width: 100vw;
+    position: relative;
+
+  }
+
+  .btn-sign-up-now {
+    text-align: right;
+
+    .button {
+      text-decoration: underline;
+      font-weight: bolder;
+      font-size: 2.6rem;
+      color: black;
+      margin: 0 !important;
+    }
+
+    .button:hover {
+      background: transparent !important;
+      color: map-get($map: $colors, $key: primary) !important;
+    }
+  }
+
+  .yellow-bg {
+    margin: 93px 0;
+    text-align: center;
+    position: relative;
+    background: map-get($map: $colors, $key: yellow);
+
+    .title-font {
+      text-align: center;
+      margin: auto;
+      margin-bottom: 20px;
+      font-size: 3rem;
+      max-width: 520px;
+      font-weight: 700;
+      color: map-get($map: $colors, $key: primary) !important;
+    }
+
+    .icon-container {
+      overflow-x: hidden;
+
+      .col {
+        padding: 15px;
+        text-align: center;
+      }
+    }
+
+    .sub-title-container {
+      overflow-x: hidden;
+
+      .card-body {
+        padding: 1.5rem;
+
+        .text-container {
+          // margin-top: 20px;
+          position: relative;
+          border-right: 2px solid;
+          border-left: 2px solid;
+          display: inline-block;
+          padding: 5px 20px;
+          color: map-get($map: $colors, $key: primary) !important;
+          font-size: 2.8rem;
+          font-weight: 700;
+        }
+
+        .text-container:before {
+          position: absolute;
+          content: "";
+          top: 0;
+          bottom: 0;
+          left: 0;
+          width: 23px;
+          border-top: 2px solid #00918d;
+          border-bottom: 2px solid #00918d;
+        }
+
+        .text-container:after {
+          position: absolute;
+          content: "";
+          top: 0;
+          bottom: 0;
+          right: 0;
+          width: 23px;
+          border-top: 2px solid #00918d;
+          border-bottom: 2px solid #00918d;
+        }
+
+        .black-color {
+          font-size: 1.5rem;
+          font-style: italic;
+          line-height: 1.6em;
+
+          strong {
+            font-weight: bolder;
+          }
+        }
+
+        .margin-top-20 {
+          margin-top: 20px;
+        }
+      }
+
+    }
+
+    .dot-container {
+      .dot {
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background: lightcyan;
+        margin: 0 5px;
+
+        &.selected {
+          background: map-get($map: $colors, $key: secondary);
+        }
+      }
+    }
+  }
+
+  .yellow-bg-before {
+    background: url("../assets/viettel_tv/yellow-top-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    bottom: 100%;
+    position: absolute;
+    height: 93px;
+    width: 100%;
+  }
+
+  .yellow-bg-after {
+    background: url("../assets/viettel_tv/yellow-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    top: 100%;
+    position: absolute;
+    height: 93px;
+    width: 100%;
+  }
+
+  .register-container {
+    padding: 10px;
+
+    .package-service {
+      // padding: 10px 0;
+      [col-12]{
+        padding: 0 0 10px 0 !important;
+      }
+     
+    }
+
+    
+
+    .fake-input{
+      text-align: left;
+      border: 1px solid lightgray;
+      border-radius: 5px;
+      padding: 10px 16px;
+      margin-bottom: 10px;
+      &.margin-top{
+        margin-top: 10px;
+      }
+    }
+
+    .btn-sign-container {
+      .button {
+        background-color: #ffe43d;
+        color: #00918d;
+        border: 1px solid #ffc107;
+        font-size: 1.7rem;
+        text-transform: uppercase;
+        box-shadow: none;
+        transition: 200ms ease-in-out;
+      }
+
+      .button:hover {
+        border: 1px solid #00918d;
+        box-shadow: 0 5px 10px rgba($color: #00918d, $alpha: .16);
+
+      }
+    }
+
+    .red-color {
+      color: red;
+      font-size: 1.6rem;
+      margin-top: 6px;
+      padding-left: 4px;
+      font-weight: bold;
+    }
+
+    .margin-bottom-20 {
+      margin-bottom: 2rem;
+    }
+
+    .item {
+      border-bottom: none !important;
+      border-top: none !important;
+      box-shadow: none !important;
+      padding-left: 0;
+      margin: 16px 0;
+    }
+
+    .item-inner {
+      padding-right: 0 !important;
+      border: 1px solid lightgray !important;
+      border-radius: 5px;
+      transition: ease-in-out 200ms;
+    }
+
+    .city {
+      // width: calc(100% - 10px);
+      border: 1px solid lightgray;
+      border-radius: 5px;
+      padding: 10px 16px;
+      color: #495057;
+      font-size: 1.4rem;
+      text-align: left;
+
+      &.margin-left {
+        margin-left: auto;
+      }
+
+      .a1-absolute {
+        right: 8px;
+        top: 50%;
+        transform: translateY(-48%);
+      }
+    }
+
+    .col {
+      // padding: 0 !important;
+    }
+
+   
+   
+
+    .item-md.item-input.item-input-has-focus .item-inner,
+    .item-md.item-input.input-has-focus .item-inner {
+      border: 1px solid #00918d !important;
+      box-shadow: 0 2px 10px rgba($color: #00918d, $alpha: .16);
+    }
+
+    .item-ios.item-input.item-input-has-focus .item-inner,
+    .item-ios.item-input.input-has-focus .item-inner {
+      border: 1px solid #00918d !important;
+      box-shadow: 0 2px 10px rgba($color: #00918d, $alpha: .16);
+    }
+
+    .item{
+      padding-left: 0;
+    }
+    .text-input {
+      border-bottom: none !important;
+      padding: 0 10px;
+      background: white;
+      display: block;
+      margin: 0 !important;
+      width: 100% !important;
+      color: black !important;
+      flex: unset;
+      -webkit-appearance: unset;
+    }
+
+    // .text-input-ios {
+    //   width: 100%;
+    //   color: black !important;
+    // }
+
+    .color-black {
+      font-size: 1.5rem;
+      padding-bottom: 2rem;
+      padding-top: 10px;
+    }
+
+    .title-font {
+      position: relative;
+      border-right: 2px solid;
+      border-left: 2px solid;
+      display: inline-block;
+      padding: 25px 20px;
+      margin: 0 auto;
+      font-size: 3rem;
+      max-width: 520px;
+      font-weight: 700;
+      color: map-get($map: $colors, $key: primary) !important;
+
+    }
+
+    color-white {
+      color: white;
+      padding-bottom: 20px;
+    }
+
+    .title-font:before {
+      position: absolute;
+      content: "";
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 23px;
+      border-top: 2px solid #00918d;
+      border-bottom: 2px solid #00918d;
+    }
+
+    .title-font:after {
+      position: absolute;
+      content: "";
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 23px;
+      border-top: 2px solid #00918d;
+      border-bottom: 2px solid #00918d;
+    }
+  }
+
+  .service-infomation {
+    // background: url("../assets/viettel_tv/viettel_matric-bg.png");
+    // background-size: 100% 100%;
+    // background-position: 50% 50%;
+    // background-repeat: no-repeat;
+    background: map-get($map: $colors, $key: primary);
+    padding: 40px 0;
+
+    .card-body-connect {
+      max-width: 540px;
+      border: 1px solid #222;
+    }
+
+    .top-bg-web {
+      background: map-get($map: $colors, $key: primary);
+      height: 120px;
+      transform: skewY(4deg);
+      top: -60px;
+      left: 0;
+      width: 100%;
+      z-index: -1;
+    }
+
+    .bottom-bg-web {
+      background: map-get($map: $colors, $key: primary);
+      height: 120px;
+      transform: skewY(-4deg);
+      bottom: -60px;
+      left: 0;
+      width: 100%;
+      z-index: -1;
+    }
+
+    .level-name {
+      background: map-get($map: $colors, $key: yellow);
+      padding: 12px 16px;
+      border-bottom: 1px solid #222;
+      font-size: 1.6rem;
+      font-weight: bolder;
+    }
+
+    .white-smoke-bg {
+      background: whitesmoke;
+      border-bottom: 1px solid #222;
+      color: map-get($map: $colors, $key: primary);
+      font-weight: bolder;
+      font-size: 1.5rem;
+
+      .col:first-child {
+        color: black;
+        font-weight: 400;
+      }
+
+      .col {
+        border-right: 1px solid #222;
+        padding: 10px;
+      }
+
+      .col:last-child {
+        border-right: none;
+      }
+    }
+
+    .white-smoke-bg:last-child {
+      border-bottom: 0;
+    }
+
+    .top-bg {
+
+      background: map-get($map: $colors, $key: primary);
+      bottom: 96%;
+      position: absolute;
+      height: 80px;
+      width: 100%;
+      left: 0;
+      transform: skewY(6deg);
+      z-index: -1;
+
+    }
+
+    .bottom-bg {
+      background: map-get($map: $colors, $key: primary);
+      top: 96%;
+      position: absolute;
+      height: 80px;
+      width: 100%;
+      left: 0;
+      transform: skewY(-6deg);
+      z-index: -1;
+    }
+
+    .hint-text {
+      margin-top: 10px;
+      text-align: left;
+      color: white;
+      line-height: 30px;
+
+      a {
+        background: map-get($map: $colors, $key: yellow);
+        font-weight: bold;
+        text-decoration: unset;
+        color: black;
+        font-style: normal;
+        text-transform: capitalize !important;
+        padding: 6px 10px;
+        border-radius: 5px;
+      }
+    }
+
+    table {
+      border: 1px solid #222;
+    }
+
+    .yellow-bg {
+      background: map-get($map: $colors, $key: yellow);
+      border-bottom: 1px solid #222;
+
+      th {
+        text-align: center;
+        font-weight: unset;
+        padding: 1.5rem;
+        line-height: 1.8em;
+        vertical-align: bottom;
+        font-size: 1.2rem;
+        border-right: 1px solid #222;
+      }
+
+      th:last-child {
+        border-right: none;
+      }
+
+      .name {
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+    }
+
+    .whitesmoke-bg {
+      background: whitesmoke;
+      border-bottom: 1px solid #222;
+
+      td {
+        padding: 16px 0;
+        vertical-align: top;
+        color: map-get($map: $colors, $key: primary);
+        font-weight: bold;
+        font-size: 1.6rem;
+        border-right: 1px solid #222;
+      }
+
+      td:first-child {
+        color: black;
+        font-weight: 400;
+      }
+
+      td:last-child {
+        border-right: none;
+      }
+    }
+
+    .whitesmoke-bg:last-child {
+      border-bottom: 0;
+    }
+
+
+    .title-font {
+      position: relative;
+      border-right: 2px solid;
+      border-left: 2px solid;
+      display: inline-block;
+      padding: 5px 20px;
+      margin: auto;
+      margin-bottom: 20px;
+      font-size: 3rem;
+      max-width: 520px;
+      font-weight: 700;
+      color: map-get($map: $colors, $key: yellow) !important;
+
+      &.type-connect {
+        margin: 30px 0 0 0;
+      }
+
+    }
+
+    .color-white {
+      color: white;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    .title-font:before {
+      position: absolute;
+      content: "";
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 23px;
+      border-top: 2px solid map-get($map: $colors, $key: yellow) !important;
+      border-bottom: 2px solid map-get($map: $colors, $key: yellow) !important;
+    }
+
+    .title-font:after {
+      position: absolute;
+      content: "";
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 23px;
+      border-top: 2px solid map-get($map: $colors, $key: yellow) !important;
+      border-bottom: 2px solid map-get($map: $colors, $key: yellow) !important;
+    }
+  }
+
+  .list-channel {
+    padding-top: 40px;
+
+    .btn-container {
+      margin-top: 30px;
+
+      .button {
+        box-shadow: 0 3px 6px rgba($color: #222, $alpha: .16);
+        text-transform: capitalize;
+        font-weight: bold;
+      }
+      .yellow{
+        background: #ffe43d;
+        color: map-get($map: $colors, $key: primary);
+      }
+    }
+
+
+  }
+
+  .left-hotline {
+    position: absolute;
+    left: 0;
+
+    &.first {
+      bottom: 0px;
+    }
+
+    &.second {
+      bottom: 40px;
+    }
+
+    &.third {
+      bottom: 80px;
+    }
+  }
+
+  @media (max-width: 575px) {
+    .district-name{
+      padding-right: 0;
+    }
+
+    .list-channel {
+      padding: 10px 10px 0 10px;
+    }
+
+    .service-infomation {
+      margin-top: 30px;
+      padding: 30px 10px;
+      background-image: none;
+      background-color: map-get($map: $colors, $key: primary);
+
+      th {
+        font-size: 1rem !important;
+        width: 25%;
+
+        .name {
+          font-size: 1.1rem !important;
+        }
+      }
+
+      td {
+        font-size: 1rem !important;
+        padding: 16px 8px !important;
+      }
+    }
+
+    .yellow-bg {
+      .container {
+        .col {
+          padding: 5px !important;
+          text-align: center !important;
+        }
+
+        .a3-justify-end {
+          justify-content: center !important;
+        }
+
+        .line {
+          margin: 0 16px !important;
+        }
+      }
+    }
+
+    .title-font {
+      font-size: 2.3rem !important;
+      padding: 10px;
+    }
+
+    .xs-hidden {
+      display: none !important;
+    }
+  }
+
+  @media (min-width: 576px) {
+    .container {
+      max-width: 540px;
+    }
+
+    .btn-sign-up-now {
+      padding: 0 70px;
+    }
+
+    .sm-hidden {
+      display: none !important;
+    }
+
+    .yellow-bg {
+      margin: 135px 0;
+    }
+
+    .yellow-bg-before {
+      height: 135px;
+    }
+
+    .yellow-bg-after {
+      height: 135px;
+    }
+
+    .icon-container {
+      .col {
+        img {
+          max-width: 28%;
+          margin: auto;
+        }
+      }
+    }
+
+    .service-infomation {
+      margin-bottom: 40px !important;
+      margin-top: 80px !important;
+      padding: 0 !important;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+  }
+
+  @media (min-width: 1112px) {
+    .container {
+      max-width: 1100px;
+    }
+  }
+}

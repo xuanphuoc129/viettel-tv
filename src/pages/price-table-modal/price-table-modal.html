@@ -1,0 +1,91 @@
+<!--
+  Generated template for the PriceTableModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-content>
+
+  <div class="close-btn a1-relative" text-right>
+    <button ion-button icon-only navPop>
+      <ion-icon name="close"></ion-icon>
+    </button>
+  </div>
+
+  <div class="primary-bg">
+
+
+    <div class="title-font">Chính sách dành cho Tivi1</div>
+    <div class="border-outline">
+      <ion-row class="yellow-bg">
+        <ion-col col-3>Dịch vụ</ion-col>
+        <ion-col col-3>Gói cước</ion-col>
+        <ion-col col-3>Giá niêm yết</ion-col>
+        <ion-col col-3>Giá bán (VNĐ)</ion-col>
+      </ion-row>
+      <ion-row align-items-center class="white-smoke-bg">
+        <ion-col col-3>
+          <div *ngFor="let item of mArrays1; let i = index">
+            <span *ngIf="i == 0">{{item.service}}</span>
+          </div>
+        </ion-col>
+        <ion-col col-3>
+          <div class="border" *ngFor="let item of mArrays1">{{item.package}}</div>
+        </ion-col>
+        <ion-col col-3>
+          <div class="border" *ngFor="let item of mArrays1">{{item.price}}</div>
+        </ion-col>
+        <ion-col col-3>
+          <div class="border" *ngFor="let item of mArrays1">
+            {{item.price_sell}}
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+
+
+    <div class="title-font" margin-top>Chính sách dành cho Tivi2</div>
+    <div class="border-outline">
+      <ion-row class="yellow-bg">
+        <ion-col col-3>Dịch vụ</ion-col>
+        <ion-col col-3>Gói cước</ion-col>
+        <ion-col col-3>Giá niêm yết</ion-col>
+        <ion-col col-3>Giá bán (VNĐ)</ion-col>
+      </ion-row>
+      <ion-row align-items-center class="white-smoke-bg">
+        <ion-col col-3>
+          <div *ngFor="let item of mArrays2; let i = index">
+            <span *ngIf="i == 0">{{item.service}}</span>
+          </div>
+        </ion-col>
+        <ion-col col-3>
+          <div class="border" *ngFor="let item of mArrays2">{{item.package}}</div>
+        </ion-col>
+        <ion-col col-3>
+          <div class="border" *ngFor="let item of mArrays2">{{item.price}}</div>
+        </ion-col>
+        <ion-col col-3>
+          <div class="border" *ngFor="let item of mArrays2">
+            {{item.price_sell}}
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div class="bottom-container">
+      <div class="a3-container white-color">
+        <ion-icon name="md-arrow-dropright"></ion-icon>
+        <span> Các mức phí trên đã bao gồm VAT.</span>
+      </div>
+
+      <div class="a3-container white-color">
+        <ion-icon name="md-arrow-dropright"></ion-icon>
+        <span> Giá khuyến mại áp dụng trong 24 tháng, sau khi kết thúc khuyến mại sẽ áp dụng giá bán theo quy định tại
+          thời điểm mới.</span>
+      </div>
+    </div>
+  </div>
+</ion-content>
