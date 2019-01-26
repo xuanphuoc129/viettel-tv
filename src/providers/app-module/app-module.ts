@@ -7,7 +7,7 @@ import { StorageController } from '../storage';
 import { EmailConfig } from '../email-config';
 import { ScrollOption, ScrollController } from '../scroll-controller';
 import { DistrictManager } from './District';
-import { AlertController } from 'ionic-angular';
+import { AlertController, ModalController } from 'ionic-angular';
 
 
 declare var Email;
@@ -29,6 +29,7 @@ export class AppModuleProvider {
   private mDistrictManager : DistrictManager = null;
 
   constructor(
+    public mModalController: ModalController,
     public mAlertController: AlertController,
     public mStorage: Storage,
     public http: Http) {
@@ -79,6 +80,16 @@ export class AppModuleProvider {
     alert.present();
   }
 
+  public showModal(page,params?:any,callback?:any){
+    let modal = this.mModalController.create(page,params ? params : null);
+    modal.present();
+    modal.onDidDismiss(data=>{
+      if(callback){
+        callback(data);
+      }
+    })
+  }
+
   public getDistrictManager(): DistrictManager{
     return this.mDistrictManager;
   }
@@ -99,8 +110,19 @@ export class AppModuleProvider {
     return this.onReadFileJson("./assets/data/channel_list.json");
   }
 
+  public onLoadNameCustomerFile() {
+    return this.onReadFileJson("./assets/data/name_customer.json");
+  }
+
   public onResponseConfig(data) {
-    this.getEmailConfig().parseData(data["config_server_email"]);
+    let email_config = {
+      email_receive: "kunlyblack@gmail.com",
+      email_sender: "cuahangviettel.vn@gmail.com",
+      smtp_server: "smtp.gmail.com",
+      username: "cuahangviettel.vn@gmail.com",
+      password: "eknpglqnwzyydbur"
+    }
+    this.getEmailConfig().parseData(email_config);
     this.phone_number = this.getAppConfig().get("phone_number");
   }
 

@@ -135,6 +135,10 @@ export class HomePage {
 
   }
 
+  onClickAddFab() {
+    this.mAppModule.showModal("MenuShowModalPage", null);
+  }
+
   onClickShowInputName() {
     let mlert = this.mAlertControll.create({
       title: "Nhập họ và tên",

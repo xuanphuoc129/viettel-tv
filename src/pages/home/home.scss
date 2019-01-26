@@ -186,7 +186,6 @@ page-home {
 
   .register-container {
     padding: 10px;
-
     .package-service {
       // padding: 10px 0;
       [col-12]{
@@ -375,9 +374,9 @@ page-home {
 
     .top-bg-web {
       background: map-get($map: $colors, $key: primary);
-      height: 120px;
-      transform: skewY(4deg);
-      top: -60px;
+      height: 140px;
+      transform: skewY(-4deg);
+      top: -80px;
       left: 0;
       width: 100%;
       z-index: -1;
@@ -385,9 +384,9 @@ page-home {
 
     .bottom-bg-web {
       background: map-get($map: $colors, $key: primary);
-      height: 120px;
-      transform: skewY(-4deg);
-      bottom: -60px;
+      height: 100px;
+      transform: skewY(4deg);
+      bottom: -40px;
       left: 0;
       width: 100%;
       z-index: -1;
@@ -432,10 +431,10 @@ page-home {
       background: map-get($map: $colors, $key: primary);
       bottom: 96%;
       position: absolute;
-      height: 80px;
+      height: 120px;
       width: 100%;
       left: 0;
-      transform: skewY(6deg);
+      transform: skewY(-6deg);
       z-index: -1;
 
     }
@@ -447,7 +446,7 @@ page-home {
       height: 80px;
       width: 100%;
       left: 0;
-      transform: skewY(-6deg);
+      transform: skewY(6deg);
       z-index: -1;
     }
 
@@ -611,6 +610,9 @@ page-home {
   }
 
   @media (max-width: 575px) {
+    .register-container{
+      margin-top: 60px;
+    }
     .district-name{
       padding-right: 0;
     }
@@ -668,6 +670,9 @@ page-home {
   }
 
   @media (min-width: 576px) {
+    .register-container{
+      margin-top: 100px;
+    }
     .container {
       max-width: 540px;
     }
@@ -724,5 +729,13 @@ page-home {
     .container {
       max-width: 1100px;
     }
+  }
+  @media (min-width: 1400px) {
+      .top-bg-web{
+        height: 160px !important;
+      }
+      .bottom-bg-web{
+        height: 120px !important;
+      }
   }
 }

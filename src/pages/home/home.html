@@ -81,106 +81,7 @@
   </div>
 
 
-  <div class="register-container" id="register-id">
-    <div class="container" text-center>
-      <div class="title-font" text-uppercase text-center>
-        đăng ký tư vấn dịch vụ
-      </div>
 
-      <div class="color-black">
-        <i>Quý khách vui lòng để lại thông tin, để tư vấn viên Viettel liên hệ và phục vụ sớm nhất có thể</i>
-      </div>  
-
-      <div *ngIf="isIosMobile" class="fake-input" (click)="onClickShowInputName()" tappable>{{name || 'Họ và tên *'}}</div>
-
-      <ion-item *ngIf="!isIosMobile">
-        <ion-input [(ngModel)]="name" placeholder="Họ và tên *"></ion-input>
-      </ion-item>
-
-      <div class="red-color" *ngIf="!mState[0]" text-left>Vui lòng nhập đủ thông tin</div>
-
-
-      <div *ngIf="isIosMobile" class="fake-input" (click)="onClickShowInputPhone()" tappable>{{phone || 'Số điện thoại *'}}</div>
-
-      <ion-item *ngIf="!isIosMobile">
-        <ion-input [(ngModel)]="phone" type="number" placeholder="Số điện thoại *"></ion-input>
-      </ion-item>
-
-      <div class="red-color" *ngIf="!mState[1]" text-left>Vui lòng nhập đủ thông tin</div>
-
-
-
-      <ion-row justify-content-between>
-        <ion-col col-6 col-sm-4 style="padding-left: 0; padding-right: 0">
-          <div class="city a1-relative" (click)="onClickCity()" tappable>
-            {{cityName || 'Tỉnh/thành phố'}}
-            <div class="a1-absolute">
-              <ion-icon name="md-arrow-dropdown"></ion-icon>
-            </div>
-          </div>
-
-        </ion-col>
-        <ion-col col-6 col-sm-4 class="district-name">
-          <div class="city margin-left a1-relative" (click)="onClickDistrict()" tappable>{{districtName ||
-            'Quận/huyện'}}
-            <div class="a1-absolute">
-              <ion-icon name="md-arrow-dropdown"></ion-icon>
-            </div>
-          </div>
-
-        </ion-col>
-
-        <ion-col col-6 col-sm-4 style="padding-left: 0px; padding-right: 0">
-          <div (click)="onClickCommune()" tappable class="city margin-left a1-relative">{{communeName ||
-            'Phường/xã'}}
-            <div class="a1-absolute">
-              <ion-icon name="md-arrow-dropdown"></ion-icon>
-            </div>
-          </div>
-        </ion-col>
-      </ion-row>
-
-      <div *ngIf="isIosMobile" (click)="onClickShowInputAddress()" tappable class="fake-input margin-top">{{address || 'Địa chỉ'}}</div>
-
-
-      <ion-item *ngIf="!isIosMobile">
-        <ion-input [(ngModel)]="address" placeholder="Địa chỉ"></ion-input>
-      </ion-item>
-
-      <ion-row class="package-service">
-        <ion-col col-12 col-sm-4 style="padding: 0">
-
-          <div (click)="onClickPackage()" tappable class="city margin-left a1-relative">{{packageName || 'Chọn gói cước
-            *'}}
-            <div class="a1-absolute">
-              <ion-icon name="md-arrow-dropdown"></ion-icon>
-            </div>
-          </div>
-          <div class="red-color" [hidden]="mState[2]" text-left>Vui lòng nhập đủ thông tin</div>
-
-        </ion-col>
-        <ion-col col-12 col-sm-7 offset-sm-1 style="padding: 0">
-          <div (click)="onClickService()" tappable class="city margin-left a1-relative">{{serviceName || 'Chọn hình
-            thức dịch vụ *
-            '}}
-            <div class="a1-absolute">
-              <ion-icon name="md-arrow-dropdown"></ion-icon>
-            </div>
-          </div>
-          <div class="red-color" [hidden]="mState[3]" text-left>Vui lòng nhập đủ thông tin</div>
-
-        </ion-col>
-      </ion-row>
-
-      <div class="color-black" text-left>
-        <i>(*) Những nội dung bắt buộc</i>
-      </div>
-
-      <div class="btn-sign-container">
-        <button ion-button round (click)="onClickRegister()">Đăng ký</button>
-      </div>
-    </div>
-  </div>
 
 
 
@@ -278,6 +179,150 @@
 
   </div>
 
+  <div class="register-container" id="register-id">
+    <div class="container" text-center>
+      <div class="title-font" text-uppercase text-center>
+        đăng ký tư vấn dịch vụ
+      </div>
+
+      <div class="color-black">
+        <i>Quý khách vui lòng để lại thông tin, để tư vấn viên Viettel liên hệ và phục vụ sớm nhất có thể</i>
+      </div>
+
+      <div *ngIf="isIosMobile" class="fake-input" (click)="onClickShowInputName()" tappable>{{name || 'Họ và tên *'}}</div>
+
+      <ion-item *ngIf="!isIosMobile">
+        <ion-input [(ngModel)]="name" placeholder="Họ và tên *"></ion-input>
+      </ion-item>
+
+      <div class="red-color" *ngIf="!mState[0]" text-left>Vui lòng nhập đủ thông tin</div>
+
+
+      <div *ngIf="isIosMobile" class="fake-input" (click)="onClickShowInputPhone()" tappable>{{phone || 'Số điện thoại
+        *'}}</div>
+
+      <ion-item *ngIf="!isIosMobile">
+        <ion-input [(ngModel)]="phone" type="number" placeholder="Số điện thoại *"></ion-input>
+      </ion-item>
+
+      <div class="red-color" *ngIf="!mState[1]" text-left>Vui lòng nhập đủ thông tin</div>
+
+
+
+      <ion-row justify-content-between>
+        <ion-col col-6 col-sm-4 style="padding-left: 0; padding-right: 0">
+          <div class="city a1-relative" (click)="onClickCity()" tappable>
+            {{cityName || 'Tỉnh/thành phố'}}
+            <div class="a1-absolute">
+              <ion-icon name="md-arrow-dropdown"></ion-icon>
+            </div>
+          </div>
+
+        </ion-col>
+        <ion-col col-6 col-sm-4 class="district-name">
+          <div class="city margin-left a1-relative" (click)="onClickDistrict()" tappable>{{districtName ||
+            'Quận/huyện'}}
+            <div class="a1-absolute">
+              <ion-icon name="md-arrow-dropdown"></ion-icon>
+            </div>
+          </div>
+
+        </ion-col>
+
+        <ion-col col-6 col-sm-4 style="padding-left: 0px; padding-right: 0">
+          <div (click)="onClickCommune()" tappable class="city margin-left a1-relative">{{communeName ||
+            'Phường/xã'}}
+            <div class="a1-absolute">
+              <ion-icon name="md-arrow-dropdown"></ion-icon>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <div *ngIf="isIosMobile" (click)="onClickShowInputAddress()" tappable class="fake-input margin-top">{{address ||
+        'Địa chỉ'}}</div>
+
+
+      <ion-item *ngIf="!isIosMobile">
+        <ion-input [(ngModel)]="address" placeholder="Địa chỉ"></ion-input>
+      </ion-item>
+
+      <ion-row class="package-service">
+        <ion-col col-12 col-sm-4 style="padding: 0">
+
+          <div (click)="onClickPackage()" tappable class="city margin-left a1-relative">{{packageName || 'Chọn gói cước
+            *'}}
+            <div class="a1-absolute">
+              <ion-icon name="md-arrow-dropdown"></ion-icon>
+            </div>
+          </div>
+          <div class="red-color" [hidden]="mState[2]" text-left>Vui lòng nhập đủ thông tin</div>
+
+        </ion-col>
+        <ion-col col-12 col-sm-7 offset-sm-1 style="padding: 0">
+          <div (click)="onClickService()" tappable class="city margin-left a1-relative">{{serviceName || 'Chọn hình
+            thức dịch vụ *
+            '}}
+            <div class="a1-absolute">
+              <ion-icon name="md-arrow-dropdown"></ion-icon>
+            </div>
+          </div>
+          <div class="red-color" [hidden]="mState[3]" text-left>Vui lòng nhập đủ thông tin</div>
+
+        </ion-col>
+      </ion-row>
+
+      <div class="color-black" text-left>
+        <i>(*) Những nội dung bắt buộc</i>
+      </div>
+
+      <div class="btn-sign-container">
+        <button ion-button round (click)="onClickRegister()">Đăng ký</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  <ion-fab bottom left>
+    <div class="fixed hotline1">
+      <div class="a1-relative">
+        <div *ngIf="_phone1 && _phone1.length > 0" class="left-hotline first">
+          <a href="tel:{{_phone1}}">
+            <ion-chip>
+              <ion-icon name="ios-call"></ion-icon>
+              <ion-label><small>Hotline 1 :</small> {{_phone1}}</ion-label>
+            </ion-chip>
+          </a>
+        </div>
+        <div class="left-hotline second" *ngIf="_phone2 && _phone2.length > 0">
+          <a href="tel:{{_phone2}}">
+            <ion-chip>
+              <ion-icon name="ios-call"></ion-icon>
+              <ion-label><small>Hotline 2 :</small> {{_phone2}}</ion-label>
+            </ion-chip>
+          </a>
+        </div>
+        <div class="left-hotline third" *ngIf="_phone3 && _phone3.length > 0">
+          <a href="tel:{{_phone3}}">
+            <ion-chip>
+              <ion-icon name="ios-call"></ion-icon>
+              <ion-label><small>Hotline 3 :</small> {{_phone3}}</ion-label>
+            </ion-chip>
+          </a>
+        </div>
+      </div>
+    </div>
+  </ion-fab>
+
+  <div id="questionanswer">
+    <question-and-answer></question-and-answer>
+  </div>
 
   <div class="list-channel">
     <div class="container">
@@ -297,34 +342,14 @@
   </div>
 
 
+  <ion-fab top left>
+    <fake-customer></fake-customer>
+  </ion-fab>
 
+  <ion-fab bottom right>
+    <button ion-fab (click)="onClickAddFab()">
+      <ion-icon name="add" class="animated pulse"></ion-icon>
+    </button>
+  </ion-fab>
 
-  <div class="fixed hotline1">
-    <div class="a1-relative">
-      <div *ngIf="_phone1 && _phone1.length > 0" class="left-hotline first">
-        <a href="tel:{{_phone1}}">
-          <ion-chip>
-            <ion-icon name="ios-call"></ion-icon>
-            <ion-label><small>Hotline 1 :</small> {{_phone1}}</ion-label>
-          </ion-chip>
-        </a>
-      </div>
-      <div class="left-hotline second" *ngIf="_phone2 && _phone2.length > 0">
-        <a href="tel:{{_phone2}}">
-          <ion-chip>
-            <ion-icon name="ios-call"></ion-icon>
-            <ion-label><small>Hotline 2 :</small> {{_phone2}}</ion-label>
-          </ion-chip>
-        </a>
-      </div>
-      <div class="left-hotline third" *ngIf="_phone3 && _phone3.length > 0">
-        <a href="tel:{{_phone3}}">
-          <ion-chip>
-            <ion-icon name="ios-call"></ion-icon>
-            <ion-label><small>Hotline 3 :</small> {{_phone3}}</ion-label>
-          </ion-chip>
-        </a>
-      </div>
-    </div>
-  </div>
 </ion-content>
