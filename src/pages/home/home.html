@@ -1,20 +1,36 @@
 <ion-content no-bounce>
+  <div class="banner-header">
+    <div class="a1-absolute left-middle">
+      <div class="title">
+        Tổng Đài Lắp Mạng Viettel
+      </div>
+      <div class="description">
+        + Miễn phí lắp đặt hoàn toàn 1OO%.
+        + Tặng Modem Wifi 2 râu cực mạnh trị giá 2.500.000 vnđ.
+        + Tặng đầu thu HD cho khách hàng lắp thêm truyền hình.
+        + Tặng đến O6 tháng cước truyền hình cho khách hàng đóng trước.
+      </div>
 
-  <div class="banner-header xs-hidden"></div>
-  <div text-center class="xs-show sm-hidden">
-    <img src="./assets/viettel_tv/banner.jpg" alt="Viettel tv">
+      <div class="btn-sign">
+        <button (click)="onClickOrderNow()" ion-button>Xem chi tiết</button>
+      </div>
+    </div>
+
   </div>
-  <div class="btn-sign-up-now">
+  <!-- <div text-center class="xs-show sm-hidden">
+    <img src="./assets/imgs/banner.jpg" alt="Viettel tv">
+  </div> -->
+  <!-- <div class="btn-sign-up-now">
     <button (click)="onClickOrderNow()" ion-button clear>Đăng ký ngay</button>
-  </div>
+  </div> -->
 
 
   <div class="yellow-bg">
-    <div class="yellow-bg-before"></div>
-    <div class="yellow-bg-after"></div>
+    <!-- <div class="yellow-bg-before"></div> -->
+    <!-- <div class="yellow-bg-after"></div> -->
 
-    <div class="container">
-      <div text-center text-uppercase class="title-font">
+    <div class="container a1-z-10">
+      <div text-center text-uppercase class="title-font a1-z-10">
         TRUYỀN HÌNH TƯƠNG TÁC INTERNET CÁP QUANG TỐC ĐỘ CAO
       </div>
 
@@ -62,7 +78,7 @@
             <div class="card-body">
               <div class="text-container" text-center text-uppercase>cho mọi nhà</div>
               <div class="black-color margin-top-20">
-                <strong>Truyền hình chỉ từ 50.000đ, với gói Combo Flexi</strong>
+                <strong>Truyền hình chỉ từ 40.000đ, với gói Combo Flexi</strong>
                 <br>
                 Miễn phí hòa mạng, trang bị modem Wifi và đầu thu HD (*)
               </div>
@@ -88,7 +104,7 @@
 
 
 
-  <div class="service-infomation a1-relative">
+  <div class="service-infomation a1-relative" id="informationId">
     <!-- <div class="a1-absolute img-background">
         <img src="./assets/viettel_tv/viettel_matric-bg.webp" alt="Vietel tv">
     </div> -->
@@ -171,12 +187,29 @@
 
       <div class="hint-text" text-center>
         <i>
-          (*) Ưu đãi <strong>Mức 2</strong> chỉ dành cho khách hàng chuyển từ nhà mạng khác sang Viettel.
+          (*) Ưu đãi <strong>Mức 2</strong> chỉ dành cho khách hàng đăng ký online và ưu tiên triển khai sớm hơn đăng ký tại nhà.
         </i>
       </div>
 
     </div>
 
+  </div>
+
+  <div class="list-channel">
+    <div class="container">
+      <ion-row>
+        <ion-col col-12 col-sm-5>
+          <img src="./assets/viettel_tv/viettel_160-kenh.png" alt="ViettelTV">
+          <div class="btn-container">
+            <button ion-button round (click)="onClickChannel()">Danh sách kênh</button>
+            <button ion-button round class="yellow" (click)="onClickOrderNow1()">Đăng ký online</button>
+          </div>
+        </ion-col>
+        <ion-col col-12 col-sm-7>
+          <img src="./assets/viettel_tv/news.png" alt="ViettelTV">
+        </ion-col>
+      </ion-row>
+    </div>
   </div>
 
   <div class="register-container" id="register-id">
@@ -240,11 +273,11 @@
       </ion-row>
 
       <div *ngIf="isIosMobile" (click)="onClickShowInputAddress()" tappable class="fake-input margin-top">{{address ||
-        'Địa chỉ'}}</div>
+        'Số nhà, tên đường, tổ/thôn'}}</div>
 
 
       <ion-item *ngIf="!isIosMobile">
-        <ion-input [(ngModel)]="address" placeholder="Địa chỉ"></ion-input>
+        <ion-input [(ngModel)]="address" placeholder="Số nhà, tên đường, tổ/thôn"></ion-input>
       </ion-item>
 
       <ion-row class="package-service">
@@ -272,7 +305,22 @@
         </ion-col>
       </ion-row>
 
-      <div class="color-black" text-left>
+      <ion-row class="checkbox-row">
+        <ion-col col-12 col-sm-6>
+          <ion-item>
+            <ion-label>Đăng ký online</ion-label>
+            <ion-checkbox (ionChange)="onChangeOnline()" [(ngModel)]="isOnline"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+        <ion-col col-12 col-sm-6>
+          <ion-item >
+            <ion-label>Đăng ký tại nhà</ion-label>
+            <ion-checkbox (ionChange)="onChangeHome()" [(ngModel)]="isHome"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <div class="color-black" style="color: red" text-left>
         <i>(*) Những nội dung bắt buộc</i>
       </div>
 
@@ -284,11 +332,6 @@
 
 
 
-
-
-
-
-
   <ion-fab bottom left>
     <div class="fixed hotline1">
       <div class="a1-relative">
@@ -296,7 +339,7 @@
           <a href="tel:{{_phone1}}">
             <ion-chip>
               <ion-icon name="ios-call"></ion-icon>
-              <ion-label><small>Hotline 1 :</small> {{_phone1}}</ion-label>
+              <ion-label><small class="xs-hidden">Hotline 1 :</small> {{_phone1}}</ion-label>
             </ion-chip>
           </a>
         </div>
@@ -304,7 +347,7 @@
           <a href="tel:{{_phone2}}">
             <ion-chip>
               <ion-icon name="ios-call"></ion-icon>
-              <ion-label><small>Hotline 2 :</small> {{_phone2}}</ion-label>
+              <ion-label><small class="xs-hidden">Hotline 2 :</small> {{_phone2}}</ion-label>
             </ion-chip>
           </a>
         </div>
@@ -312,7 +355,7 @@
           <a href="tel:{{_phone3}}">
             <ion-chip>
               <ion-icon name="ios-call"></ion-icon>
-              <ion-label><small>Hotline 3 :</small> {{_phone3}}</ion-label>
+              <ion-label><small class="xs-hidden">Hotline 3 :</small> {{_phone3}}</ion-label>
             </ion-chip>
           </a>
         </div>
@@ -324,29 +367,13 @@
     <question-and-answer></question-and-answer>
   </div>
 
-  <div class="list-channel">
-    <div class="container">
-      <ion-row>
-        <ion-col col-12 col-sm-5>
-          <img src="./assets/viettel_tv/viettel_160-kenh.png" alt="ViettelTV">
-          <div class="btn-container">
-            <button ion-button round (click)="onClickChannel()">Danh sách kênh</button>
-            <button ion-button round class="yellow" (click)="onClickOrderNow()">Đăng ký ngay</button>
-          </div>
-        </ion-col>
-        <ion-col col-12 col-sm-7>
-          <img src="./assets/viettel_tv/news.png" alt="ViettelTV">
-        </ion-col>
-      </ion-row>
-    </div>
-  </div>
 
 
   <ion-fab top left>
     <fake-customer></fake-customer>
   </ion-fab>
 
-  <ion-fab bottom right>
+  <ion-fab bottom right class="btn-menu">
     <button ion-fab (click)="onClickAddFab()">
       <ion-icon name="add" class="animated pulse"></ion-icon>
     </button>

@@ -1,8 +1,14 @@
 page-home {
-  .scroll-content{
+  .scroll-content {
     overflow-x: hidden !important;
     overflow-y: auto;
   }
+  #questionanswer{
+    padding-bottom: 80px;
+  }
+
+  
+
   .container-header {
     background: map-get($map: $colors, $key: secondary);
 
@@ -35,10 +41,11 @@ page-home {
 
   .container {
     margin: 0 auto;
-  } 
+    z-index: 10;
+  }
 
   .banner-header {
-    background-image: url("../assets/viettel_tv/banner.jpg");
+    background-image: url("../assets/imgs/banner.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -46,22 +53,39 @@ page-home {
     width: 100vw;
     position: relative;
 
+    .left-middle {
+      left: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      .title {
+        font-weight: bold;
+        font-size: 2.8rem;
+      }
+
+      .description {
+        white-space: pre-line;
+        font-size: 1.8rem;
+        line-height: 1.8em;
+      }
+    }
+
   }
 
-  .btn-sign-up-now {
-    text-align: right;
+  .btn-sign {
+    margin-top: 32px;
+    text-align: left;
 
     .button {
-      text-decoration: underline;
       font-weight: bolder;
-      font-size: 2.6rem;
-      color: black;
+      font-size: 2rem;
       margin: 0 !important;
+      padding: 20px 32px !important;
+      border-radius: 20px;
     }
 
     .button:hover {
-      background: transparent !important;
-      color: map-get($map: $colors, $key: primary) !important;
+      background: orange !important;
     }
   }
 
@@ -69,8 +93,7 @@ page-home {
     margin: 93px 0;
     text-align: center;
     position: relative;
-    background: map-get($map: $colors, $key: yellow);
-
+    // background: map-get($map: $colors, $key: yellow);
     .title-font {
       text-align: center;
       margin: auto;
@@ -163,14 +186,14 @@ page-home {
   }
 
   .yellow-bg-before {
-    background: url("../assets/viettel_tv/yellow-top-bg.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    bottom: 100%;
     position: absolute;
-    height: 93px;
+    height: 245px;
     width: 100%;
+    top: -185px;
+    left: 0;
+    transform: skewY(-4deg);
+    background: map-get($map: $colors, $key: yellow);
+    z-index: 1;
   }
 
   .yellow-bg-after {
@@ -185,24 +208,29 @@ page-home {
   }
 
   .register-container {
-    padding: 10px;
+    padding: 30px 10px;
+    background: whitesmoke;
+
     .package-service {
+
       // padding: 10px 0;
-      [col-12]{
+      [col-12] {
         padding: 0 0 10px 0 !important;
       }
-     
+
     }
 
-    
 
-    .fake-input{
+
+    .fake-input {
       text-align: left;
       border: 1px solid lightgray;
       border-radius: 5px;
       padding: 10px 16px;
       margin-bottom: 10px;
-      &.margin-top{
+      background: white;
+
+      &.margin-top {
         margin-top: 10px;
       }
     }
@@ -216,6 +244,8 @@ page-home {
         text-transform: uppercase;
         box-shadow: none;
         transition: 200ms ease-in-out;
+        min-height: 50px;
+        min-width: 180px;
       }
 
       .button:hover {
@@ -237,12 +267,22 @@ page-home {
       margin-bottom: 2rem;
     }
 
+    .checkbox-row{
+      .item-inner{
+        border: none !important;
+      }
+      .item{
+        background: transparent !important;
+      }
+    }
+
     .item {
       border-bottom: none !important;
       border-top: none !important;
       box-shadow: none !important;
       padding-left: 0;
       margin: 16px 0;
+      background: white;
     }
 
     .item-inner {
@@ -260,6 +300,7 @@ page-home {
       color: #495057;
       font-size: 1.4rem;
       text-align: left;
+      background: white;
 
       &.margin-left {
         margin-left: auto;
@@ -276,8 +317,8 @@ page-home {
       // padding: 0 !important;
     }
 
-   
-   
+
+
 
     .item-md.item-input.item-input-has-focus .item-inner,
     .item-md.item-input.input-has-focus .item-inner {
@@ -291,9 +332,10 @@ page-home {
       box-shadow: 0 2px 10px rgba($color: #00918d, $alpha: .16);
     }
 
-    .item{
+    .item {
       padding-left: 0;
     }
+
     .text-input {
       border-bottom: none !important;
       padding: 0 10px;
@@ -318,6 +360,7 @@ page-home {
     }
 
     .title-font {
+      z-index: 10;
       position: relative;
       border-right: 2px solid;
       border-left: 2px solid;
@@ -384,9 +427,9 @@ page-home {
 
     .bottom-bg-web {
       background: map-get($map: $colors, $key: primary);
-      height: 100px;
+      height: 140px;
       transform: skewY(4deg);
-      bottom: -40px;
+      bottom: -80px;
       left: 0;
       width: 100%;
       z-index: -1;
@@ -583,7 +626,8 @@ page-home {
         text-transform: capitalize;
         font-weight: bold;
       }
-      .yellow{
+
+      .yellow {
         background: #ffe43d;
         color: map-get($map: $colors, $key: primary);
       }
@@ -610,10 +654,27 @@ page-home {
   }
 
   @media (max-width: 575px) {
-    .register-container{
+    .banner-header{
+      .left-middle{
+        left: 16px !important;
+        right: 16px !important;
+
+      }
+      .title{
+        text-align: center;
+      }
+      .description{
+        text-align: center;
+      }
+      .btn-sign{
+        text-align: center !important;
+      }
+    }
+    .register-container {
       margin-top: 60px;
     }
-    .district-name{
+
+    .district-name {
       padding-right: 0;
     }
 
@@ -670,9 +731,10 @@ page-home {
   }
 
   @media (min-width: 576px) {
-    .register-container{
+    .register-container {
       margin-top: 100px;
     }
+
     .container {
       max-width: 540px;
     }
@@ -689,9 +751,7 @@ page-home {
       margin: 135px 0;
     }
 
-    .yellow-bg-before {
-      height: 135px;
-    }
+    
 
     .yellow-bg-after {
       height: 135px;
@@ -707,7 +767,7 @@ page-home {
     }
 
     .service-infomation {
-      margin-bottom: 40px !important;
+      margin-bottom: 90px !important;
       margin-top: 80px !important;
       padding: 0 !important;
     }
@@ -730,12 +790,14 @@ page-home {
       max-width: 1100px;
     }
   }
+
   @media (min-width: 1400px) {
-      .top-bg-web{
-        height: 160px !important;
-      }
-      .bottom-bg-web{
-        height: 120px !important;
-      }
+    .top-bg-web {
+      height: 160px !important;
+    }
+
+    .bottom-bg-web {
+      height: 120px !important;
+    }
   }
 }

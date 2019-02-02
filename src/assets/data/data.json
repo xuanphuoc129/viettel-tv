@@ -121,16 +121,7 @@
       "price_sell": "áp dụng giá niêm yết"
     }
   ],
-  "uu_dai": [{
-      "type_connect": "Trả Sau Hàng Tháng",
-      "discount": "250K Phí Hòa Mạng",
-      "level": "Mức 1"
-    },
-    {
-      "type_connect": "Trả Trước 3 Tháng",
-      "discount": "Miễn Phí Hòa Mạng",
-      "level": "Mức 1"
-    },
+  "uu_dai": [
     {
       "type_connect": "Trả Trước 6 Tháng",
       "discount": "Tặng 1 Tháng",
@@ -147,27 +138,17 @@
       "level": "Mức 1"
     },
     {
-      "type_connect": "Trả Sau Hàng Tháng",
-      "discount": "Miễn Phí Hòa Mạng",
-      "level": "Mức 2"
-    },
-    {
-      "type_connect": "Trả Trước 3 Tháng",
-      "discount": "Tặng 1 Tháng",
-      "level": "Mức 2"
-    },
-    {
-      "type_connect": "Trả Trước 3 Tháng",
+      "type_connect": "Trả Trước 6 Tháng",
       "discount": "Tặng 2 Tháng",
       "level": "Mức 2"
     },
     {
-      "type_connect": "Trả Trước 3 Tháng",
+      "type_connect": "Trả Trước 12 Tháng",
       "discount": "Tặng 4 Tháng",
       "level": "Mức 2"
     },
     {
-      "type_connect": "Trả Trước 3 Tháng",
+      "type_connect": "Trả Trước 18 Tháng",
       "discount": "Tặng 6 Tháng",
       "level": "Mức 2"
     }

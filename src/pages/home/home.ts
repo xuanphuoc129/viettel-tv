@@ -115,6 +115,9 @@ export class HomePage {
 
   isIosMobile: boolean = false;
 
+  isOnline: boolean = true;
+  isHome: boolean = false;
+
   constructor(
     public mAlertControll: AlertController,
     public platForm: Platform,
@@ -133,6 +136,22 @@ export class HomePage {
       }
     })
 
+  }
+
+  onChangeOnline(){
+    if(this.isOnline){
+      this.isHome = false;
+    }else{
+      this.isHome = true;
+    }
+  }
+
+  onChangeHome(){
+    if(this.isHome){
+      this.isOnline = false;
+    }else{
+      this.isHome = true;
+    }
   }
 
   onClickAddFab() {
@@ -185,7 +204,7 @@ export class HomePage {
     mlert.present();
   }
 
-  onClickShowInputAddress(){
+  onClickShowInputAddress() {
     let mlert = this.mAlertControll.create({
       title: "Địa chỉ",
       inputs: [
@@ -304,6 +323,12 @@ export class HomePage {
   }
 
   onClickOrderNow() {
+    let ele = document.getElementById("informationId");
+    if (ele) {
+      this.myContent.scrollTo(0, ele.offsetTop, 500);
+    }
+  }
+  onClickOrderNow1() {
     let ele = document.getElementById("register-id");
     if (ele) {
       this.myContent.scrollTo(0, ele.offsetTop, 500);
@@ -381,6 +406,8 @@ export class HomePage {
     })
     let str5 = "Hình thức dịch vụ: " + s.name;
 
+    let str7 = "Đăng ký: " + (this.isOnline ? "Đăng ký online" : "Đăng ký tại nhà") + ";";
+
     return str1 + "; " + str2 + "; " + str3 + str6 + "; " + str4 + "; " + str5;
   }
 
@@ -404,13 +431,15 @@ export class HomePage {
 
   onClickCity() {
     let array = [];
-    this.mCitys.forEach(element => {
+    let citys = this.mAppModule.getDistrictManager().getCitys();
+    citys.forEach(element => {
       array.push({
         id: element.code,
         name: element.name
       });
     });
-    this.mAppModule.showRadio("Chọn tỉnh/thành phố", array, this._cityCode, (id) => {
+
+    this.mAppModule.showModal("SelectAddressPage", { params: { title: "Chọn tỉnh/thành phố", items: array, selected: this._cityCode } }, (id) => {
       if (id) {
         if (id != this._cityCode) {
           this._DistricCode = "-1";
@@ -425,8 +454,65 @@ export class HomePage {
           this.mDistricts = this.mAppModule.getDistrictManager().getDistrictWithCityCode(this._cityCode);
         }
       }
-    })
+    });
+
   }
+
+  onClickDistrict() {
+    if (this._cityCode == "-1") {
+      alert("Bạn chưa chọn tỉnh/thành phố");
+      return;
+    } else {
+      let array = [];
+      let districts = this.mAppModule.getDistrictManager().getDistrictWithCityCode(this._cityCode);
+      districts.forEach(element => {
+        array.push({
+          id: element.code,
+          name: element.cap + " " + element.name
+        });
+      });
+
+      this.mAppModule.showModal("SelectAddressPage", { params: { title: "Chọn quận/huyện", items: array, selected: this._DistricCode } }, (id) => {
+        if (id) {
+          if (id != this._DistricCode) {
+            this._CommuneCode = "-1";
+            this.communeName = "";
+            this._mPackageId = -1;
+            this.packageName = "";
+
+            this._DistricCode = id;
+            this.onGetDisctrictName();
+            this.mCommunes = this.mAppModule.getDistrictManager().getDistrictWithDistrictCode(this._DistricCode);
+          }
+        }
+      });
+    }
+  }
+
+  onClickCommune() {
+    if (this._DistricCode == "-1") {
+      alert("Bạn chưa chọn quận/huyện");
+      return;
+    } else {
+      let array = [];
+      let communes = this.mAppModule.getDistrictManager().getDistrictWithDistrictCode(this._DistricCode);
+      communes.forEach(element => {
+        array.push({
+          id: element.code,
+          name: element.cap + " " + element.name
+        });
+      });
+
+      this.mAppModule.showModal("SelectAddressPage", { params: { title: "Chọn xã/phường", items: array, selected: this._CommuneCode } }, (id) => {
+        if (id) {
+          this._CommuneCode = id;
+          this.onGetCommuneName();
+        }
+      });
+    }
+  }
+
+
 
   onGetCityName() {
     let city = this.mCitys.find(ele => {
@@ -475,55 +561,9 @@ export class HomePage {
   }
 
 
-  onClickDistrict() {
-    if (this._cityCode == "-1") {
-      alert("Bạn chưa chọn tỉnh/thành phố");
-      return;
-    }
-    let array = [];
-    this.mDistricts.forEach(element => {
-      array.push({
-        id: element.code,
-        name: element.name
-      });
-    });
-    this.mAppModule.showRadio("Chọn quận huyện", array, this._DistricCode, (id) => {
-      if (id) {
-        if (id != this._DistricCode) {
-          this._CommuneCode = "-1";
-          this.communeName = "";
-          this._mPackageId = -1;
-          this.packageName = "";
 
-          this._DistricCode = id;
-          this.onGetDisctrictName();
-          this.mCommunes = this.mAppModule.getDistrictManager().getDistrictWithDistrictCode(this._DistricCode);
-        }
-      }
-    })
 
-  }
-
-  onClickCommune() {
-    if (this._DistricCode == "-1") {
-      alert("Bạn chưa chọn quận huyện");
-      return;
-    }
-    let array = [];
-    this.mCommunes.forEach(element => {
-      array.push({
-        id: element.code,
-        name: element.name
-      });
-    });
-    this.mAppModule.showRadio("Chọn phường xã", array, this._CommuneCode, (id) => {
-      if (id) {
-        this._CommuneCode = id;
-        this.onGetCommuneName();
-      }
-    })
-  }
-
+  
   onClickPackage() {
     if (this._DistricCode == "-1" || this._cityCode == "-1" || this._CommuneCode == "-1") {
       alert("Bạn chưa chọn địa chỉ");

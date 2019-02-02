@@ -4,7 +4,7 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<ion-header class="sm-hidden">
 
   <ion-toolbar>
     <ion-buttons left>
@@ -14,7 +14,7 @@
     </ion-buttons>
     <ion-buttons left>
       <button ion-button [class.selected]="_type == 2" (click)="onClickType(2)">
-       Truyền hình K+
+        Truyền hình K+
       </button>
     </ion-buttons>
 
@@ -28,76 +28,101 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content no-bounce>
+    <div class="backdrop" tappable navPop></div>
 
 
-  <div [hidden]="_type == 2">
-    <div class="list-name">
-      DANH SÁCH KÊNH Truyền hình cơ bản
+  <div class="f-maxwidth-container">
+    <div class="xs-hidden">
+      <ion-row class="header-container-xs">
+        <ion-col>
+          <button clear ion-button [class.selected_xs]="_type == 1" (click)="onClickType(1)">
+            Truyền hình cơ bản
+          </button>
+        </ion-col>
+        <ion-col>
+          <button clear ion-button [class.selected_xs]="_type == 2" (click)="onClickType(2)">
+            Truyền hình K+
+          </button>
+        </ion-col>
+        <ion-col text-right>
+          <button clear ion-button icon-only navPop class="btn-close-xs">
+            <ion-icon name="close"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
     </div>
 
-    <table width="100%">
-      <tr class="tb-header">
-        <th>TT</th>
-        <th class="xs-hidden">TT STB</th>
-        <th class="xs-hidden">Xuất xứ</th>
-        <th class="xs-hidden">Thể loại</th>
-        <th class="xs-hidden">Đơn vị cung cấp</th>
-        <th>Kênh mới</th>
-        <th>Tín hiệu</th>
-        <th class="xs-hidden">TSTV (Tua lại) (giờ)</th>
-        <th class="xs-hidden">TVOD (Xem lại) (ngày)</th>
-        <th class="xs-hidden">NPVR (Ghi lại)</th>
-        <!-- <th class="xs-hidden">Ghi chú</th> -->
-      </tr>
-
-      <tr *ngFor="let item of mChannelLists1" class="tb-row">
-        <td>{{item.tt}}</td>
-        <td class="xs-hidden">{{item.tt_stb}}</td>
-        <td class="xs-hidden">{{item.source}}</td>
-        <td class="xs-hidden">{{item.type}}</td>
-        <td class="xs-hidden">{{item.agency}}</td>
-        <td >{{item.new_channel}}</td>
-        <td>{{item.signal}}</td>
-        <td class="xs-hidden">{{item.tstv}}</td>
-        <td class="xs-hidden">{{item.tvod}}</td>
-        <td class="xs-hidden">{{item.npvr}}</td>
-        <!-- <td class="xs-hidden">{{item.note}}</td> -->
-      </tr>
-    </table>
-  </div>
-
-  <div [hidden]="_type == 1">
-    <div class="list-name">
-      DANH SÁCH KÊNH K+
+    <div style="padding: 10px">
+        <div [hidden]="_type == 2">
+            <div class="list-name">
+              DANH SÁCH KÊNH Truyền hình cơ bản
+            </div>
+      
+            <table width="100%">
+              <tr class="tb-header">
+                <th>TT</th>
+                <th class="xs-hidden">TT STB</th>
+                <th class="xs-hidden">Xuất xứ</th>
+                <th class="xs-hidden">Thể loại</th>
+                <th class="xs-hidden">Đơn vị cung cấp</th>
+                <th>Kênh mới</th>
+                <th>Tín hiệu</th>
+                <th class="xs-hidden">TSTV (Tua lại) (giờ)</th>
+                <th class="xs-hidden">TVOD (Xem lại) (ngày)</th>
+                <th class="xs-hidden">NPVR (Ghi lại)</th>
+                <!-- <th class="xs-hidden">Ghi chú</th> -->
+              </tr>
+      
+              <tr *ngFor="let item of mChannelLists1" class="tb-row">
+                <td>{{item.tt}}</td>
+                <td class="xs-hidden">{{item.tt_stb}}</td>
+                <td class="xs-hidden">{{item.source}}</td>
+                <td class="xs-hidden">{{item.type}}</td>
+                <td class="xs-hidden">{{item.agency}}</td>
+                <td>{{item.new_channel}}</td>
+                <td>{{item.signal}}</td>
+                <td class="xs-hidden">{{item.tstv}}</td>
+                <td class="xs-hidden">{{item.tvod}}</td>
+                <td class="xs-hidden">{{item.npvr}}</td>
+                <!-- <td class="xs-hidden">{{item.note}}</td> -->
+              </tr>
+            </table>
+          </div>
+      
+          <div [hidden]="_type == 1">
+            <div class="list-name">
+              DANH SÁCH KÊNH K+
+            </div>
+            <table width="100%">
+              <tr class="tb-header">
+                <th>TT</th>
+                <th class="xs-hidden">TT STB</th>
+                <th class="xs-hidden">Xuất xứ</th>
+                <th class="xs-hidden">Thể loại</th>
+                <th class="xs-hidden">Đơn vị cung cấp</th>
+                <th>Kênh mới</th>
+                <th>Tín hiệu</th>
+                <th class="xs-hidden">TSTV (Tua lại) (giờ)</th>
+                <th class="xs-hidden">TVOD (Xem lại) (ngày)</th>
+                <th class="xs-hidden">NPVR (Ghi lại)</th>
+              </tr>
+      
+              <tr *ngFor="let item of mChannelLists2" class="tb-row">
+                <td>{{item.tt}}</td>
+                <td class="xs-hidden">{{item.tt_stb}}</td>
+                <td class="xs-hidden">{{item.source}}</td>
+                <td class="xs-hidden">{{item.type}}</td>
+                <td class="xs-hidden">{{item.agency}}</td>
+                <td>{{item.new_channel}}</td>
+                <td>{{item.signal}}</td>
+                <td class="xs-hidden">{{item.tstv}}</td>
+                <td class="xs-hidden">{{item.tvod}}</td>
+                <td class="xs-hidden">{{item.npvr}}</td>
+              </tr>
+            </table>
+          </div>
     </div>
-    <table width="100%">
-      <tr class="tb-header">
-        <th>TT</th>
-        <th class="xs-hidden">TT STB</th>
-        <th class="xs-hidden">Xuất xứ</th>
-        <th class="xs-hidden">Thể loại</th>
-        <th class="xs-hidden">Đơn vị cung cấp</th>
-        <th>Kênh mới</th>
-        <th>Tín hiệu</th>
-        <th class="xs-hidden">TSTV (Tua lại) (giờ)</th>
-        <th class="xs-hidden">TVOD (Xem lại) (ngày)</th>
-        <th class="xs-hidden">NPVR (Ghi lại)</th>
-      </tr>
-
-      <tr *ngFor="let item of mChannelLists2" class="tb-row">
-        <td>{{item.tt}}</td>
-        <td class="xs-hidden">{{item.tt_stb}}</td>
-        <td class="xs-hidden">{{item.source}}</td>
-        <td class="xs-hidden">{{item.type}}</td>
-        <td class="xs-hidden">{{item.agency}}</td>
-        <td>{{item.new_channel}}</td>
-        <td>{{item.signal}}</td>
-        <td class="xs-hidden">{{item.tstv}}</td>
-        <td class="xs-hidden">{{item.tvod}}</td>
-        <td class="xs-hidden">{{item.npvr}}</td>
-      </tr>
-    </table>
   </div>
 
 
