@@ -1,5 +1,6 @@
 <ion-content no-bounce>
   <div class="banner-header">
+    <div class="backdrop sm-hidden"></div>
     <div class="a1-absolute left-middle">
       <div class="title">
         Tổng Đài Lắp Mạng Viettel
@@ -306,13 +307,13 @@
       </ion-row>
 
       <ion-row class="checkbox-row">
-        <ion-col col-12 col-sm-6>
+        <ion-col col-6 col-sm-6>
           <ion-item>
             <ion-label>Đăng ký online</ion-label>
             <ion-checkbox (ionChange)="onChangeOnline()" [(ngModel)]="isOnline"></ion-checkbox>
           </ion-item>
         </ion-col>
-        <ion-col col-12 col-sm-6>
+        <ion-col col-6 col-sm-6>
           <ion-item >
             <ion-label>Đăng ký tại nhà</ion-label>
             <ion-checkbox (ionChange)="onChangeHome()" [(ngModel)]="isHome"></ion-checkbox>
@@ -369,9 +370,9 @@
 
 
 
-  <ion-fab top left>
+  <!-- <ion-fab top left>
     <fake-customer></fake-customer>
-  </ion-fab>
+  </ion-fab> -->
 
   <ion-fab bottom right class="btn-menu">
     <button ion-fab (click)="onClickAddFab()">

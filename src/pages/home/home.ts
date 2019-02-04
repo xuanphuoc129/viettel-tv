@@ -150,7 +150,7 @@ export class HomePage {
     if(this.isHome){
       this.isOnline = false;
     }else{
-      this.isHome = true;
+      this.isOnline = true;
     }
   }
 
